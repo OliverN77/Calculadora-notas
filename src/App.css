@@ -1,0 +1,75 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #282c37;
+  height: 100dvh;
+}
+
+.App-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ccc;
+  box-shadow: 9px 9px 9px #000;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.config-button{
+  margin: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #48e;
+  color: white;
+  cursor: pointer;
+}
+
+.config-button:hover{
+  transition: .7s;
+  background-color: #024;
+}
+
+
+@media screen and (max-width: 1300px) {
+  body{
+    width: 100%;
+    height: 100%;
+  }
+
+  .App-header{
+    padding: 10px;
+    margin-bottom: 10rem;
+  }
+  
+}
+
+
+@media screen and (max-width: 768px) {
+  body{
+    width: 100%;
+    height: 50%;
+  }
+  
+  h1{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .App-header{
+    padding: 10px;
+    margin-bottom: 10rem;
+  }
+  
+}
+

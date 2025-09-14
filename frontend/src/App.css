@@ -1,75 +1,134 @@
-*{
+/* Updated to use dark colors for background and vibrant colors for UI elements */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
-  background-color: #282c37;
-  height: 100dvh;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  background: linear-gradient(135deg, #0d0d0d 0%, #262626 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  line-height: 1.6;
+  padding: 20px;
 }
 
-.App-header{
+.App-header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #ccc;
-  box-shadow: 9px 9px 9px #000;
-  border-radius: 10px;
-  padding: 20px;
+  background: rgba(13, 13, 13, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(242, 105, 80, 0.3);
+  border-radius: 20px;
+  padding: 40px;
   margin: 20px;
+  min-width: 450px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(38, 11, 135, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.config-button{
-  margin: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #48e;
-  color: white;
+.App-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242, 105, 80, 0.6), transparent);
+}
+
+.App-header h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: -0.025em;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f26950 50%, #260b87 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.config-button {
+  margin: 20px 0 32px 0;
+  padding: 14px 28px;
+  border: 1px solid rgba(242, 105, 80, 0.4);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(242, 105, 80, 0.2) 0%, rgba(38, 11, 135, 0.2) 100%);
+  color: #f26950;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.config-button:hover{
-  transition: .7s;
-  background-color: #024;
+.config-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
 }
 
+.config-button:hover::before {
+  left: 100%;
+}
+
+.config-button:hover {
+  background: linear-gradient(135deg, rgba(242, 105, 80, 0.3) 0%, rgba(38, 11, 135, 0.3) 100%);
+  border-color: rgba(242, 105, 80, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(242, 105, 80, 0.4);
+}
+
+.config-button:active {
+  transform: translateY(0);
+}
 
 @media screen and (max-width: 1300px) {
-  body{
-    width: 100%;
-    height: 100%;
+  body {
+    padding: 16px;
   }
 
-  .App-header{
-    padding: 10px;
-    margin-bottom: 10rem;
+  .App-header {
+    padding: 32px;
+    margin: 10px;
+    min-width: 380px;
   }
-  
 }
 
-
 @media screen and (max-width: 768px) {
-  body{
-    width: 100%;
-    height: 50%;
+  body {
+    padding: 12px;
   }
-  
-  h1{
-    font-size: 1.5rem;
+
+  .App-header h1 {
+    font-size: 1.75rem;
     text-align: center;
   }
 
-  .App-header{
-    padding: 10px;
-    margin-bottom: 10rem;
+  .App-header {
+    padding: 24px;
+    margin: 0;
+    min-width: unset;
+    width: 100%;
+    max-width: 420px;
   }
-  
-}
 
+  .config-button {
+    width: 100%;
+  }
+}

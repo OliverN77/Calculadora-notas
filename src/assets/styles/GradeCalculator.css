@@ -1,4 +1,3 @@
-/* Clean dark minimal styles for grade calculator */
 .grade {
   width: 100%;
 }
@@ -89,7 +88,7 @@
 
 .grade-input::placeholder,
 .percentage-input::placeholder {
-  color: #262626;
+  color: rgba(255, 255, 255, .7);
   font-weight: 400;
 }
 
@@ -309,19 +308,122 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container form > div {
-    flex-wrap: wrap;
-    gap: 6px;
+  .container {
+    padding: 20px 16px;
+    margin: 0 8px;
+    border-radius: 12px;
   }
 
   .grade-input,
   .percentage-input {
     font-size: 16px;
+    width: 100%;
+    max-width: none;
+  }
+
+  .percentage-input {
+    max-width: 120px;
+    align-self: flex-start;
   }
 
   .add-button,
   .delete-button {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    align-self: flex-start;
+  }
+
+  .submit-button {
+    padding: 14px 32px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .container h3 {
+    font-size: 1.25rem;
+    padding: 16px 12px;
+    margin-top: 16px;
+  }
+
+  .container .message {
+    font-size: 0.9rem;
+    padding: 14px 16px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .container form > div {
+    padding: 12px 8px;
+    gap: 10px;
+  }
+
+  .grade-input,
+  .percentage-input {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .percentage-input {
+    max-width: 100px;
+  }
+
+  .add-button,
+  .delete-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .submit-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .container h3 {
+    font-size: 1.125rem;
+    padding: 14px 10px;
+  }
+
+  .container .message {
+    font-size: 0.85rem;
+    padding: 12px 14px;
+  }
+
+  .error-message {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .container form > div {
+    flex-direction: row;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .container h3 {
+    font-size: 1rem;
+    padding: 12px;
+    margin-top: 8px;
+  }
+
+  .container .message {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    margin-top: 6px;
   }
 }
